@@ -1,40 +1,59 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import React, { useEffect, useState } from "react";
+import "bulma/css/bulma.css";
+import logo from "../assets/blob.svg";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
-export default function ButtonAppBar() {
-  const classes = useStyles();
-  console.log(classes)
+const Navbar = () => {
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <>
+      <section className="navbar-sec ">
+        <div className="box">
+          <nav
+            className="navbar"
+            role="navigation"
+            aria-label="main navigation"
+          >
+            {/*Navbar logo brand logo*/}
+            <div className="navbar-brand">
+              <a className="navbar-item" href="#">
+                <figure className="image ">
+                  <img src={logo} className="is-rounded  is-square" />
+                </figure>
+              </a>
+              {/* // burger menu*/}
+
+              <a
+                role="button"
+                className="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navbarBasicExample"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            {/* navbar-items*/}
+            <div id="navbarBasicExample" className="navbar-menu">
+              <div className="navbar-start">
+                <a className="navbar-item ">Home</a>
+                <a className="navbar-item ">Coins</a>
+                <a className="navbar-item ">Historical Data</a>
+                <a className="navbar-item ">Exchanges</a>
+                <a className="navbar-item  ">Documentation</a>
+              </div>
+            </div>
+
+            {/*Seach bar*/}
+
+            <div className="control navbar-end ">
+              <input type="text" className="input" placeholder="Search..." />
+            </div>
+          </nav>
+        </div>
+      </section>
+    </>
   );
-}
+};
+
+export default Navbar;

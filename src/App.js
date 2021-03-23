@@ -1,14 +1,18 @@
-import React from 'react';
-import ButtonAppBar from './Components/Navbar'
+import React, { useState } from "react";
+import Sidebar from "./Components/Sidebar";
+import Navbar from "./Components/Navbar";
+import Card from "./Components/CardC";
 
-
-const App = () => {
-  return (
-  	<>
-  		<h1>This is app</h1>
-  		<ButtonAppBar />
-  	</>
-  	)
+function App() {
+	return (
+		<>
+		<Navbar />
+			<div className="tile is-ancestor mt-1">
+				<Sidebar />
+				<Card />
+			</div>
+		</>
+	);
 }
 
 export default App;
