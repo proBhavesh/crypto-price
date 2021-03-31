@@ -1,0 +1,14 @@
+
+.app-div{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.main-ui{
+	margin-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 3rem;
+	width: 79vw;
+	/*width: calc(100%-26.4rem)%;*/
+}

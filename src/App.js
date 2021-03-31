@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+// import '../node_modules/bulma/css/bulma.min.css';
 import Sidebar from "./Components/Sidebar";
-import Navbar from "./Components/Navbar";
-import Card from "./Components/CardC";
-
+import MainUi from "./Components/MainUi";
+import "./app.css";
 function App() {
 	return (
 		<>
-		<Navbar />
-			<div className="tile is-ancestor mt-1">
-				<Sidebar />
-				<Card />
+			<div className="app-div">
+			<Sidebar/>
+			<MainUi/>
 			</div>
 		</>
 	);

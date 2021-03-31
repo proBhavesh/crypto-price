@@ -1,0 +1,125 @@
+ul {
+	margin: 0;
+	margin-left: 1rem;
+	padding: 0px 20px 5px 20px;
+}
+.side-section {
+	background-color: #3f4d67;
+	height: 100vh;
+	overflow: hidden;
+	width: 21vw;
+	/*136.6 total width*/
+	box-shadow: 1px 0 20px 0 #3f4d67;
+	color: #a9b7d0;
+	transition: all 0.3s ease-in-out;
+	z-index: 2;
+}
+
+.side-section:hover {
+	transition: all 0.3s ease-in-out;
+	overflow-y: scroll;
+}
+
+.side-head {
+	margin: 1rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.nav-item2 {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 1px 0 20px 0 #3f4d67;
+	text-align: left;
+	border-radius: 0;
+	margin-top: 3rem;
+	display: flex;
+	align-items: left;
+	margin-bottom: 2rem;
+	cursor: pointer;
+}
+
+.nav-item2:hover,.nav-item2:active  {
+	color: #1dc4e9;
+}
+
+
+
+.nav-item1 {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #e8edf7;
+	text-transform: uppercase;
+	padding: 25px 20px 5px;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.span-logo {
+	margin-right: 1rem;
+}
+
+.side-nav {
+	margin-top: 0;
+}
+
+.toggler {
+	font-size: 1rem;
+}
+
+
+.coin-names {
+	padding: 7px 7px 7px 60px;
+	margin: 0;
+	font-weight: 0;
+	font-size: 1.4rem;
+	background: #39465e;
+	width: 100%;
+}
+
+.coin-names1 {
+	margin: 0;
+	padding: 0;
+}
+
+.side-nav::after {
+	content: "";
+	background-color: #1dc4e9;
+	z-index: 1027;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 3px;
+	height: 100vh;
+}
+
+.coin-name:hover, .arrow:hover {
+	color: #1dc4e9;
+	cursor: pointer;
+}
+
+
+
+.add-line {
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 1px 0 20px 0 #3f4d67;
+	text-align: left;
+	border-radius: 0;
+	margin-top: 3rem;
+	display: flex;
+	align-items: left;
+	margin-bottom: 2rem;
+}
+
+.hide{
+	display: none;
+}
+
+.arrow{
+	position: relative;
+	left: 44px;
+	top:3.5px;
+}

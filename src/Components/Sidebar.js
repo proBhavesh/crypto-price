@@ -1,41 +1,103 @@
 import React, { useState, useEffect } from "react";
+import "../css/sidebar.css";
+import { IconContext } from "react-icons";
+import { FiTrendingUp, FiHome, FiBox, FiChevronRight } from "react-icons/fi";
+import { Sling as Hamburger } from "hamburger-react";
+import logo from "../assets/logo.jpeg";
+import { markRes, eachCoinId } from "./Api.js";
+import EachCard2 from "./EachCard2";
 
-import "./sidebar.css";
-import { markRes } from "./Api";
-
-const Sidebar = (props) => {
-	// seeting effect hook
-
+const Sidebar = () => {
 	const [state, setState] = useState([]);
-	// setting useEffect hook
+	const [classes, setClasses] = useState("hide");
 
 	useEffect(() => {
 		const arr = markRes();
 		arr.then((data) => {
 			setState(data);
+			// console.log(data);
 		});
 	}, []);
 
-	// returning the values
+	// function to render components
+
+		const getName = (event) => {
+		let coinId = event.target.innerHTML;
+		console.log(coinId);
+		return coinId;
+		// const res = eachCoinId(coinId);
+		// res.then((data)=>{
+		// 	console.log(data);
+		};
+	
 
 	return (
-		<section className="side-bar sidebar-sec tile is-2 is-flex is-flex-direction-column is-parent ">
-			<div className="is-child">
-				<div className="button is-info is-size-4 coin-btn mt-2 ml-1">
-					Coins
-				</div>
-				<hr />
-				<div>
-					{state.map((data) => (
-						<div className="">
-							<h1 className="button has-background-success m-1 p-1 coin-btn mr-3 has-text-grey-dark">
-								{data.name}
-							</h1>
+		<>
+			<IconContext.Provider value={{ color: "#a9b7d0", size: "1.6rem" }}>
+				<section className="side-section">
+					<div className="side-div">
+						{/*Sidebar head*/}
+
+						<div className="side-head">
+							<div className="logo">
+								<img src={logo} alt="img" />
+							</div>
+							<div className="toggler">
+								<Hamburger />
+							</div>
 						</div>
-					))}
-				</div>
-			</div>
-		</section>
+
+						{/*Sidebar navigation*/}
+						<nav className="side-nav">
+							<ul>
+								<li className="nav-item1">Navigation</li>
+								<li className="nav-item2">
+									<span className="span-logo">
+										<FiHome />
+									</span>
+									<span className="span-name">Dashboard</span>
+								</li>
+								<li className="nav-item1">Cryptocurrencies</li>
+								<li
+									className="nav-item2 "
+									onClick={() => {
+										if (classes == "hide") {
+											setClasses("add-line");
+										} else if (classes == "add-line") {
+											setClasses("hide");
+										}
+									}}
+								>
+									<span className="span-logo">
+										<FiBox />
+									</span>
+									<div>List of Coins</div>
+									<span className="arrow">
+										<FiChevronRight />
+									</span>
+								</li>
+								<li className={classes}>
+									<div>
+										{state.map((data) => (
+											<div className="coin-names ">
+												<div className="coin-name">
+													{data.name}
+
+													<div onClick={getName}>
+														{data.id}
+													</div>
+												</div>
+												<hr />
+											</div>
+										))}
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</section>
+			</IconContext.Provider>
+		</>
 	);
 };
 
