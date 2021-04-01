@@ -24,7 +24,7 @@ const EachCard2 = (props) => {
 
 	// 	const arr = eachCoinId("bitcoin");
 	// 	arr.then((arr) => {
-	// 		console.log(arr);
+			// console.log(state);
 	// 	});
 	// }, []);
 	if (error) {
@@ -88,14 +88,14 @@ const EachCard2 = (props) => {
 
 								<span className="price-no">
 									{" "}
-									{state.market_data.price_change_24h_in_currency.usd}%
+									{state.market_data.market_cap_change_percentage_24h_in_currency.usd}%
 								</span>
 							</div>
 							<div className="progress-bar">
 								{" "}
 								<ProgressBar
 									completed={
-										state.market_data.price_change_24h_in_currency.usd *
+										state.market_data.market_cap_change_percentage_24h_in_currency.usd *
 										10
 									}
 									bgcolor="#9D8FD4"
