@@ -8,11 +8,10 @@ import { markRes, eachCoinId } from "./Api.js";
 import EachCard2 from "./EachCard2";
 
 // creating context
-export const coinIdContext = React.createContext("bitcoin");
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 	// definig id
-	let id = useContext(coinIdContext);
+	
 
 	const [state, setState] = useState([]);
 
@@ -28,18 +27,10 @@ const Sidebar = () => {
 
 	// function to render components
 
-	const getName = (event) => {
-		const coinId = event.target.innerHTML;
-		// console.log(coinId);
-		id = coinId;
-		console.log(id);
-
-	};
+	
 
 	return (
 		<>
-			{/*Providing Context*/}
-			<coinIdContext.Provider value={getName}>
 				<IconContext.Provider
 					value={{ color: "#a9b7d0", size: "1.6rem" }}
 				>
@@ -96,7 +87,7 @@ const Sidebar = () => {
 													<div className="coin-name">
 														{data.name}
 
-														<div onClick={getName}>
+														<div onClick={(event=> props.onClick(event.target.innerHTML))}>
 															{data.id}
 														</div>
 													</div>
@@ -110,7 +101,6 @@ const Sidebar = () => {
 						</div>
 					</section>
 				</IconContext.Provider>
-			</coinIdContext.Provider>
 		</>
 	);
 };

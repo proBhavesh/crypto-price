@@ -10,11 +10,13 @@ const EachCard2 = (props) => {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
+	console.log(`EachCard2.js : ${props.coinId}`)
 	useEffect(() => {
 		// making function
 
 		const arr = eachCoinId(props.coinId);
 		arr.then((arr) => {
+			// console.log(arr);
 			return setState(arr);
 		});
 	}, [props.coinId]);
@@ -66,7 +68,7 @@ const EachCard2 = (props) => {
 								{" "}
 								<ProgressBar
 									completed={
-										(100000 - state.market_data.current_price.usd) / 1000
+										(100000 - Math.abs(state.market_data.current_price.usd)) / 1000
 									}
 									bgcolor="#1DCAE0"
 									height="7px"
@@ -95,7 +97,8 @@ const EachCard2 = (props) => {
 								{" "}
 								<ProgressBar
 									completed={
-										state.market_data.market_cap_change_percentage_24h_in_currency.usd *
+
+										Math.abs(state.market_data.market_cap_change_percentage_24h_in_currency.usd) *
 										10
 									}
 									bgcolor="#9D8FD4"
@@ -125,7 +128,7 @@ const EachCard2 = (props) => {
 							<div className="progress-bar">
 								{" "}
 								<ProgressBar
-									completed={state.market_data.price_change_24h_in_currency.usd / 10}
+									completed={Math.abs(state.market_data.price_change_24h_in_currency.usd) / 10}
 									bgcolor="#1DE5BB"
 									height="7px"
 									isLabelVisible={false}
