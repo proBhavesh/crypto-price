@@ -43,7 +43,7 @@ const Sidebar = (props) => {
 									<img src={logo} alt="img" />
 								</div>
 								<div className="toggler">
-									<Hamburger />
+									<Hamburger  />
 								</div>
 							</div>
 
