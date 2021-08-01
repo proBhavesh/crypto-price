@@ -1,7 +1,7 @@
 import { eachCoinId } from "./Api";
-const DOMAIN = "sandbox576b5f7c7db54119a02081290b22ed52.mailgun.org";
+const DOMAIN = process.env.REACT_APP_DOMAIN_NAME;
 const mailgun = require("mailgun-js")({
-	apiKey: "92edc405d00216edd1f994a06ae21a7c-a0cfb957-684602a2",
+	apiKey: process.env.REACT_APP_API_KEY,
 	domain: DOMAIN,
 });
 
