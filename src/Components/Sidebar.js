@@ -21,7 +21,7 @@ const Sidebar = (props) => {
 		const arr = markRes();
 		arr.then((data) => {
 			setState(data);
-			// console.log(data);
+			// console.log(data);;;
 		});
 	}, []);
 
