@@ -16,7 +16,7 @@ const EachCard2 = (props) => {
 
 		const arr = eachCoinId(props.coinId);
 		arr.then((arr) => {
-			// console.log(arr);
+			console.log(arr);
 			return setState(arr);
 		});
 	}, [props.coinId]);
