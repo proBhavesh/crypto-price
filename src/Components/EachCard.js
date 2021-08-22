@@ -15,6 +15,7 @@ const EachCard = (props) => {
 
 		const arr = markRes();
 		arr.then((arr) => {
+			console.log(arr);
 			return setState(arr);
 		});
 	}, []);
