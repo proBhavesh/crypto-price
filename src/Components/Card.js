@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { markRes, cardInfo, eachCoinId } from "./Api";
 import Loader from "react-loader-spinner";
-import "../css/eachcard.css";
+import "../css/card.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { FiArrowUp } from "react-icons/fi";
 
-const EachCard2 = (props) => {
+const Card = (props) => {
 	const [state, setState] = useState();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	console.log(`EachCard2.js : ${props.coinId}`)
+	console.log(`Card.js : ${props.coinId}`)
 	useEffect(() => {
-		// making function
 
 		const arr = eachCoinId(props.coinId);
 		arr.then((arr) => {
@@ -21,14 +20,6 @@ const EachCard2 = (props) => {
 		});
 	}, [props.coinId]);
 
-	// useEffect(() => {
-	// 	// making function
-
-	// 	const arr = eachCoinId("bitcoin");
-	// 	arr.then((arr) => {
-			// console.log(state);
-	// 	});
-	// }, []);
 	if (error) {
 		return <div>Error: {error.message}</div>;
 	}
@@ -144,4 +135,4 @@ const EachCard2 = (props) => {
 	}
 };
 
-export default EachCard2;
+export default Card;

@@ -10,5 +10,7 @@
 	flex-direction: column;
 	padding: 3rem;
 	width: 79vw;
+	align-self: center;
+	justify-content: center;
 	/*width: calc(100%-26.4rem)%;*/
 }

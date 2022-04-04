@@ -7,7 +7,7 @@ export const status = async ()=>{
 	return await res.json();
 }
 
-export const markRes = async () =>{
+export const getCoins = async () =>{
 	const url = BASE_URL+"/coins/markets?vs_currency=usd&per_page=250";
 	const res = await fetch(url);
 	 return await res.json();

@@ -1,30 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../css/sidebar.css";
 import { IconContext } from "react-icons";
-import { FiTrendingUp, FiHome, FiBox, FiChevronRight } from "react-icons/fi";
+import { FiHome, FiBox, FiChevronRight } from "react-icons/fi";
 import { Sling as Hamburger } from "hamburger-react";
-import logo from "../assets/logo.jpeg";
-import { markRes, eachCoinId } from "./Api.js";
-import EachCard2 from "./EachCard2";
-
-// creating context
+import { getCoins } from "./Api.js";
 
 const Sidebar = (props) => {
-	// definig id
-	
-
-	const [state, setState] = useState([]);
-
+	const [coins, setCoins] = useState([]);
 	const [classes, setClasses] = useState("hide");
 
 	useEffect(() => {
-		const arr = markRes();
+		const arr = getCoins();
 		arr.then((data) => {
-			setState(data);
+			setCoins(data);
 		});
 	}, []);
-
-	// function to render components
 
 	return (
 		<>
@@ -34,11 +24,11 @@ const Sidebar = (props) => {
 						{/*Sidebar head*/}
 						<div className="side-head">
 							<div className="logo">
-								<img src={logo} alt="img" />
+								<h1 className="logo">Tracker</h1>
 							</div>
-							<div className="toggler">
+							{/*<div className="toggler">
 								<Hamburger />
-							</div>
+							</div>*/}
 						</div>
 						{/*Sidebar navigation*/}
 						<nav className="side-nav">
@@ -71,10 +61,10 @@ const Sidebar = (props) => {
 								</li>
 								<li className={classes}>
 									<div>
-										{state.map((data) => (
+										{coins.map((coin) => (
 											<div className="coin-names ">
 												<div className="coin-name">
-													{data.name}
+													{coin.name}
 
 													<div
 														onClick={(event) =>
@@ -84,7 +74,7 @@ const Sidebar = (props) => {
 															)
 														}
 													>
-														{data.id}
+														{coin.id}
 													</div>
 												</div>
 												<hr />

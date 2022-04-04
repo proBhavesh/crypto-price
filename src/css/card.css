@@ -1,6 +1,7 @@
 .cards{
 	display: flex;	
 	justify-content: space-around;
+	flex-direction: column;
 	flex-wrap: wrap;
 	transition: all .5s ease-in-out;
 }
@@ -19,6 +20,7 @@
   	min-width: 19vw;
   	/*margin-right: 2rem;*/
   	margin: 1rem;
+
 }
 
 .coin-name{

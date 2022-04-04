@@ -1,3 +1,7 @@
+.logo{
+	font-size: 3rem;
+}
+
 ul {
 	margin: 0;
 	margin-left: 1rem;
@@ -24,6 +28,7 @@ ul {
 	margin: 1rem;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 }
 
 .nav-item2 {
@@ -127,4 +132,10 @@ ul {
 .hm-bgr{
 	position: relative;
 	left: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .side-section {
+    width: 0;
+  }
 }
