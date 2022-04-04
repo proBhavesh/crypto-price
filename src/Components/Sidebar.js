@@ -21,7 +21,6 @@ const Sidebar = (props) => {
 		const arr = markRes();
 		arr.then((data) => {
 			setState(data);
-			// console.log(data);;;
 		});
 	}, []);
 
@@ -33,7 +32,6 @@ const Sidebar = (props) => {
 				<section className="side-section">
 					<div className="side-div">
 						{/*Sidebar head*/}
-
 						<div className="side-head">
 							<div className="logo">
 								<img src={logo} alt="img" />
@@ -42,7 +40,6 @@ const Sidebar = (props) => {
 								<Hamburger />
 							</div>
 						</div>
-
 						{/*Sidebar navigation*/}
 						<nav className="side-nav">
 							<ul>
